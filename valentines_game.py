@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_lottie import st_lottie
 import requests
+import json
 
 def load_lottie_url(url):
     r = requests.get(url)
@@ -10,11 +11,15 @@ def load_lottie_url(url):
 
 def main():
     st.title("❤️ Valentine's Day Ninja Scenario Game ❤️")
-    st.write("Welcome to your special Valentine's Day game! Answer these fun scenarios and see what happens!")
+    st.write("Hello Nam-Nam (Hidden leaf village Shinobi)!\n Welcome to your special Valentine's Day game! Answer these fun scenarios and see what happens!")
     
     # Load animations
     lottie_heart = load_lottie_url("https://assets9.lottiefiles.com/packages/lf20_i4m5ctvd.json")
-    lottie_ninja1 = load_lottie_url("https://assets9.lottiefiles.com/packages/lf20_1pxqjqps.json")
+    # lottie_ninja1 = load_lottie_url("https://assets9.lottiefiles.com/packages/lf20_1pxqjqps.json")
+    path1 = "./Animation - 1739549279665.json"
+    with open(path1, "r") as file:
+        lottie_ninja1 = json.load(file)
+    # lottie_ninja1 = json.load("./Animation - 1739549279665.json")
     lottie_ninja2 = load_lottie_url("https://assets3.lottiefiles.com/private_files/lf30_2sc4cgsd.json")
     lottie_ninja3 = load_lottie_url("https://assets2.lottiefiles.com/private_files/lf30_lj6kjpv4.json")
     lottie_ninja4 = load_lottie_url("https://assets4.lottiefiles.com/private_files/lf30_wvyein4w.json")
