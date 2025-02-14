@@ -10,21 +10,38 @@ def load_lottie_url(url):
     return r.json()
 
 def main():
-    st.title("❤️ Valentine's Day Ninja Scenario Game ❤️")
-    st.write("Hello Nam-Nam (Hidden leaf village Shinobi)!\n Welcome to your special Valentine's Day game! Answer these fun scenarios and see what happens!")
+    st.title("❤️ Valentine's Day Ninja Game ❤️")
+    st.write("Hello Nam-Nam (Hidden leaf village Shinobi)!")
+    
+    pathStart ="./nam-nam-ninja.json"
+    with open(pathStart, "r") as file:
+        lottie_start = json.load(file)
+
+    st_lottie(lottie_start, speed=1, width=200, height=200)
+    st.write("Welcome to your special Valentine's Day game! Answer these fun scenarios and see what happens!")
     
     # Load animations
     lottie_heart = load_lottie_url("https://assets9.lottiefiles.com/packages/lf20_i4m5ctvd.json")
-    # lottie_ninja1 = load_lottie_url("https://assets9.lottiefiles.com/packages/lf20_1pxqjqps.json")
+
     path1 = "./Animation - 1739549279665.json"
     with open(path1, "r") as file:
         lottie_ninja1 = json.load(file)
-    # lottie_ninja1 = json.load("./Animation - 1739549279665.json")
-    lottie_ninja2 = load_lottie_url("https://assets3.lottiefiles.com/private_files/lf30_2sc4cgsd.json")
-    lottie_ninja3 = load_lottie_url("https://assets2.lottiefiles.com/private_files/lf30_lj6kjpv4.json")
-    lottie_ninja4 = load_lottie_url("https://assets4.lottiefiles.com/private_files/lf30_wvyein4w.json")
-    lottie_ninja5 = load_lottie_url("https://assets5.lottiefiles.com/private_files/lf30_xyz123.json")
-    lottie_ninja6 = load_lottie_url("https://assets6.lottiefiles.com/private_files/lf30_abc456.json")
+    path2 = "./IchirakuRamen.json"
+    with open(path2, "r") as file:
+        lottie_ninja2 = json.load(file)
+    path3 = "./training_together.json"
+    with open(path3, "r") as file:
+        lottie_ninja3 = json.load(file)
+    path4 = "./ninja_challenge.json"
+    with open(path4, "r") as file:
+        lottie_ninja4 = json.load(file)
+    path5 = "./mysterious_scroll.json"
+    with open(path5, "r") as file:
+        lottie_ninja5 = json.load(file)
+    path6 = "./festival.json"
+    with open(path6, "r") as file:
+        lottie_ninja6 = json.load(file)
+
     
     if lottie_heart:
         st_lottie(lottie_heart, speed=1, width=200, height=200)
